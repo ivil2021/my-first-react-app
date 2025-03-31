@@ -1,13 +1,21 @@
 import './App.css';
-import Greeting from './components/Greeting';
+import { Greeting } from './components/Greeting';
+import { Profile } from './components/Profile';
+import { ShoppingList } from './components/ShoppingList';
 
-function App() {
+export function App() {
+  const items = [
+    { id: 1, name: 'Яблоки', price: 5 },
+    { id: 2, name: 'Бананы', price: 15 },
+    { id: 3, name: 'Апельсины', price: 25 },
+  ];
+
   return (
     <div className="App">
-      <Greeting name='tom'/>
-      <Greeting name='ann'/>
+      <Greeting name="Андрей" />
+      <Greeting name="Аня" />
+      <Profile name="Аня" age={23} location="Таганрог" />
+      <ShoppingList items={items} />
     </div>
   );
 }
-
-export default App;
